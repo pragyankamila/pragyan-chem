@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pragyan Kamila | 1st-Year Chemistry (Hons.) Student • Learning &amp; Connect</title>
+  <meta name="description" content="Personal student page of Pragyan Kamila, 1st-year B.Sc. Chemistry (Hons.) undergraduate at Presidency University, Kolkata, eager to learn Computer-Aided Drug Design (CADD) and Computational Oncology." />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', ' system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            bio: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+              950: '#042f2e'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(1.5deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.55; transform: scale(1); }
+      50% { opacity: 0.95; transform: scale(1.06); }
+    }
+    .mol-float {
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+    .node-pulse {
+      animation: pulseGlow 3.2s ease-in-out infinite;
+    }
+    .glass-panel {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-[#fffaf7] text-stone-800 dark:bg-stone-950 dark:text-stone-100 transition-colors duration-300 min-h-screen flex flex-col selection:bg-rose-400 selection:text-white">
+
+  <!-- Toast Notification -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 pointer-events-none flex flex-col gap-2"></div>
+
+  <!-- Sticky Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/85 dark:bg-slate-900/85 glass-panel border-b border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <!-- Brand / Identity -->
+      <a href="#hero" id="brandLink" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-rose-400 via-pink-400 to-amber-300 flex items-center justify-center text-white font-display font-bold text-lg shadow-sm group-hover:scale-105 transition">
+          PK
+        </div>
+        <div>
+          <div class="font-display font-bold text-base sm:text-lg leading-tight text-stone-800 dark:text-white">Pragyan Kamila</div>
+          <div class="text-[11px] font-medium text-rose-500 dark:text-rose-300">1st-Year Chemistry Student • Eager to Learn &amp; Connect</div>
+        </div>
+      </a>
+
+      <!-- View Switcher & Nav Links -->
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <button type="button" data-section="hero" class="nav-scroll-btn px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-rose-500 dark:hover:text-teal-400 transition">Overview</button>
+        <button type="button" data-section="research" class="nav-scroll-btn px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-rose-500 dark:hover:text-teal-400 transition">Research Vision</button>
+        <button type="button" data-section="education" class="nav-scroll-btn px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-rose-500 dark:hover:text-teal-400 transition">Education</button>
+        <button type="button" data-section="skills" class="nav-scroll-btn px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-rose-500 dark:hover:text-teal-400 transition">Skills &amp; Languages</button>
+        <button type="button" data-section="contact" class="nav-scroll-btn px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-rose-500 dark:hover:text-teal-400 transition">Contact</button>
+      </nav>
+
+      <!-- Right Controls: Mode Switch, Theme Toggle, Mobile Menu -->
+      <div class="flex items-center gap-2">
+        <a href="mailto:pragyanem@gmail.com" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-rose-500 hover:bg-rose-400 text-white shadow-sm transition">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>pragyanem@gmail.com</span>
+        </a>
+
+        <button id="themeToggleBtn" type="button" aria-label="Toggle color theme" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+          <svg id="iconSun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg id="iconMoon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <button id="mobileMenuBtn" type="button" aria-label="Toggle mobile navigation" class="md:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenuDrawer" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 space-y-1">
+      <button type="button" data-section="hero" class="nav-scroll-btn block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Overview</button>
+      <button type="button" data-section="research" class="nav-scroll-btn block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Research Vision &amp; CADD</button>
+      <button type="button" data-section="education" class="nav-scroll-btn block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Education &amp; PUBDET Rank</button>
+      <button type="button" data-section="skills" class="nav-scroll-btn block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Skills &amp; Languages</button>
+      <button type="button" data-section="contact" class="nav-scroll-btn block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact &amp; Location</button>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 1: LIVE PORTFOLIO WEBSITE                                        -->
+  <!-- ===================================================================== -->
+  <main id="portfolioView" class="flex-1">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative overflow-hidden py-12 sm:py-20 border-b border-rose-100 dark:border-stone-800/80 bg-gradient-to-br from-rose-50/80 via-[#fffaf7] to-amber-50/60 dark:from-stone-900 dark:via-stone-950 dark:to-stone-900">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left Column: Intro & Bio -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex flex-wrap items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-rose-100/90 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
+                <span class="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
+                Humbly Seeking Mentorship, Lab Shadowing &amp; Connections
+              </span>
+              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-amber-50 dark:bg-amber-950/70 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+                1st-Year Undergraduate • PUBDET 2026 (GMR 29)
+              </span>
+            </div>
+
+            <div class="space-y-3">
+              <p class="text-xs sm:text-sm font-medium text-rose-500 dark:text-rose-300 tracking-wide">
+                Hello! I'm glad you stopped by —
+              </p>
+              <h1 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-stone-800 dark:text-white leading-[1.12]">
+                Pragyan Kamila
+              </h1>
+              <p class="text-lg sm:text-xl font-medium text-rose-600 dark:text-rose-300">
+                1st-Year B.Sc. Chemistry (Hons.) Student at <a href="https://presiuniv.ac.in/" target="_blank" rel="noopener noreferrer" class="underline decoration-rose-400/50 hover:decoration-rose-500">Presidency University, Kolkata</a>
+              </p>
+            </div>
+
+            <p class="text-stone-600 dark:text-stone-300 text-base sm:text-lg leading-relaxed">
+              I am at the very beginning of my academic journey in Chemistry, hoping to learn and grow toward a future in <strong class="font-semibold text-stone-800 dark:text-white">Computer-Aided Drug Design (CADD)</strong> and <strong class="font-semibold text-stone-800 dark:text-white">Computational Oncology</strong>. With a personal care for blood cancers—especially <strong class="font-semibold text-stone-800 dark:text-white">Chronic Lymphocytic Leukemia (CLL)</strong>—I would be deeply grateful for any guidance, conversations, or beginner <strong class="font-semibold text-stone-800 dark:text-white">laboratory shadowing</strong> opportunities.
+            </p>
+
+            <!-- Quick Key Fact Pills -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+              <div class="p-3.5 rounded-2xl bg-white/90 dark:bg-stone-900 border border-rose-100 dark:border-stone-800 shadow-sm">
+                <div class="text-xs font-medium text-stone-500 dark:text-stone-400">Where I Study</div>
+                <div class="font-display font-bold text-sm sm:text-base text-stone-800 dark:text-white mt-0.5">Presidency University</div>
+                <div class="text-xs text-rose-500 dark:text-rose-400 mt-0.5">July 2026 – Present (1st Yr)</div>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-white/90 dark:bg-stone-900 border border-rose-100 dark:border-stone-800 shadow-sm">
+                <div class="text-xs font-medium text-stone-500 dark:text-stone-400">What I Hope to Learn</div>
+                <div class="font-display font-bold text-sm sm:text-base text-stone-800 dark:text-white mt-0.5">CADD &amp; Blood Cancers</div>
+                <div class="text-xs text-rose-500 dark:text-rose-400 mt-0.5">Molecular Docking &amp; CLL</div>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-white/90 dark:bg-stone-900 border border-rose-100 dark:border-stone-800 shadow-sm">
+                <div class="text-xs font-medium text-stone-500 dark:text-stone-400">How I Hope to Help</div>
+                <div class="font-display font-bold text-sm sm:text-base text-stone-800 dark:text-white mt-0.5">Dry-Lab &amp; In Vitro</div>
+                <div class="text-xs text-rose-500 dark:text-rose-400 mt-0.5">Lab Shadowing &amp; Learning</div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button type="button" data-section="contact" class="nav-scroll-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-400 text-white font-semibold text-sm shadow-sm transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>Connect for Lab Opportunities</span>
+              </button>
+              <button type="button" data-section="research" class="nav-scroll-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm border border-slate-200 dark:border-slate-700 transition">
+                <span>Explore Research Objectives</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <button type="button" data-section="education" class="nav-scroll-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 font-semibold text-sm border border-indigo-200/80 dark:border-indigo-800/80 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>Academic Credentials</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Molecular Docking & Signal Transduction Visual Card -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-3xl bg-gradient-to-br from-[#4a2c40] via-[#3b2d54] to-[#2d3a4b] text-white p-6 sm:p-7 shadow-xl border border-rose-300/30 overflow-hidden">
+              <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
+                <div>
+                  <span class="text-[11px] font-mono uppercase tracking-wider text-teal-300 block">Research Schematic</span>
+                  <h2 class="font-display font-bold text-lg text-white">CADD &amp; CLL Signal Transduction</h2>
+                </div>
+                <span class="px-2.5 py-1 rounded-lg bg-teal-500/20 text-teal-300 font-mono text-xs border border-teal-400/30">
+                  Dry-Lab + In Vitro
+                </span>
+              </div>
+
+              <!-- Custom Molecular Docking SVG Illustration -->
+              <div class="mol-float my-2 flex justify-center">
+                <svg viewBox="0 0 360 210" class="w-full max-w-sm h-auto" role="img" aria-label="Molecular Docking and Signal Transduction Schematic">
+                  <defs>
+                    <linearGradient id="pocketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#0d9488" stop-opacity="0.35"/>
+                      <stop offset="100%" stop-color="#312e81" stop-opacity="0.55"/>
+                    </linearGradient>
+                    <linearGradient id="bondGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#2dd4bf"/>
+                      <stop offset="100%" stop-color="#818cf8"/>
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Binding Pocket Contour -->
+                  <path d="M 35 40 Q 95 15, 165 45 T 295 35 Q 335 75, 315 135 Q 275 185, 195 170 T 65 175 Q 20 130, 35 40 Z" fill="url(#pocketGrad)" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="5 4" />
+
+                  <!-- Hydrogen Bond / Docking Interaction Lines -->
+                  <line x1="130" y1="82" x2="95" y2="55" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3 3" />
+                  <line x1="215" y1="78" x2="258" y2="52" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3 3" />
+                  <line x1="175" y1="128" x2="175" y2="162" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3 3" />
+
+                  <!-- Chemical Inhibitor Structure (Hexagonal + Pentagonal Ring Scaffold) -->
+                  <polygon points="130,82 160,65 190,82 190,115 160,132 130,115" fill="rgba(20, 184, 166, 0.2)" stroke="url(#bondGrad)" stroke-width="3" />
+                  <polygon points="190,82 222,72 242,98 222,125 190,115" fill="rgba(129, 140, 248, 0.2)" stroke="url(#bondGrad)" stroke-width="3" />
+
+                  <!-- Substituent Branches -->
+                  <line x1="130" y1="115" x2="96" y2="132" stroke="#2dd4bf" stroke-width="2.5" />
+                  <line x1="242" y1="98" x2="280" y2="98" stroke="#818cf8" stroke-width="2.5" />
+
+                  <!-- Atom Nodes -->
+                  <circle cx="130" cy="82" r="6" fill="#2dd4bf" class="node-pulse" />
+                  <circle cx="160" cy="65" r="5" fill="#e2e8f0" />
+                  <circle cx="190" cy="82" r="6" fill="#818cf8" />
+                  <circle cx="190" cy="115" r="5" fill="#e2e8f0" />
+                  <circle cx="160" cy="132" r="6" fill="#f43f5e" class="node-pulse" />
+                  <circle cx="130" cy="115" r="5" fill="#e2e8f0" />
+                  <circle cx="222" cy="72" r="6" fill="#38bdf8" />
+                  <circle cx="242" cy="98" r="6" fill="#2dd4bf" class="node-pulse" />
+                  <circle cx="222" cy="125" r="5" fill="#e2e8f0" />
+                  <circle cx="96" cy="132" r="6" fill="#fbbf24" />
+                  <circle cx="280" cy="98" r="6" fill="#a78bfa" />
+
+                  <!-- Labels inside Schematic -->
+                  <text x="48" y="48" fill="#fde68a" font-size="9" font-family="JetBrains Mono, monospace">H-Bond Site</text>
+                  <text x="235" y="46" fill="#fde68a" font-size="9" font-family="JetBrains Mono, monospace">Kinase Pocket</text>
+                  <text x="115" y="188" fill="#99f6e4" font-size="10" font-family="JetBrains Mono, monospace">Targeted Inhibitor • CLL Pathway</text>
+                </svg>
+              </div>
+
+              <!-- Interactive Aspect Selector Inside Hero Card -->
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <div class="text-xs font-medium text-slate-300 mb-2">Click a research pillar to inspect Pragyan's focus:</div>
+                <div class="grid grid-cols-3 gap-1.5 text-xs">
+                  <button type="button" data-hero-pillar="docking" class="hero-pillar-btn px-2.5 py-1.5 rounded-lg font-medium bg-teal-500 text-slate-950 transition text-center">
+                    Molecular Docking
+                  </button>
+                  <button type="button" data-hero-pillar="cll" class="hero-pillar-btn px-2.5 py-1.5 rounded-lg font-medium bg-white/10 text-slate-200 hover:bg-white/20 transition text-center">
+                    CLL &amp; Oncology
+                  </button>
+                  <button type="button" data-hero-pillar="signaling" class="hero-pillar-btn px-2.5 py-1.5 rounded-lg font-medium bg-white/10 text-slate-200 hover:bg-white/20 transition text-center">
+                    Cell Signaling
+                  </button>
+                </div>
+                <p id="heroPillarText" class="mt-3 text-xs text-slate-200 bg-white/5 rounded-xl p-3 border border-white/10 leading-relaxed">
+                  <strong class="text-teal-300">Molecular Docking &amp; CADD:</strong> Digitally designing targeted chemical inhibitors and mastering receptor-ligand docking to disrupt oncogenic drivers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH OBJECTIVES & SCIENTIFIC FOCUS SECTION -->
+    <section id="research" class="py-14 sm:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-rose-500 dark:text-rose-400 font-semibold">What I Hope to Learn &amp; Explore</span>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-stone-800 dark:text-white mt-1">
+            My Learning Goals &amp; Areas of Curiosity
+          </h2>
+        </div>
+        <!-- Filter Buttons for Research Pillars -->
+        <div class="flex flex-wrap gap-1.5" role="tablist" aria-label="Filter Research Domains">
+          <button type="button" data-research-filter="all" class="research-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-rose-500 text-white shadow-sm transition">All Pillars (4)</button>
+          <button type="button" data-research-filter="computational" class="research-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">Dry-Lab &amp; CADD</button>
+          <button type="button" data-research-filter="biological" class="research-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">CLL &amp; Signaling</button>
+        </div>
+      </div>
+
+      <!-- Dual CV Objective Statements (Verbatim Grounded Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 border border-slate-200/90 dark:border-slate-800 shadow-sm relative overflow-hidden">
+          <div class="w-1.5 h-full bg-teal-500 absolute left-0 top-0"></div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono uppercase tracking-wider font-semibold text-rose-600 dark:text-teal-400">CV Objective I • Career &amp; Laboratory Shadowing</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-teal-50 dark:bg-teal-950 text-rose-600 dark:text-teal-300 border border-teal-200 dark:border-teal-800">Active Goal</span>
+          </div>
+          <p class="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            "Highly motivated B.Sc. Chemistry (Hons.) student at <a href="https://presiuniv.ac.in/" target="_blank" rel="noopener noreferrer" class="text-rose-500 dark:text-teal-400 font-medium underline">Presidency University</a> aiming to build a research career in <strong>Computer-Aided Drug Design (CADD)</strong> and <strong>Computational Oncology</strong> with a special interest in hematological malignancies. Seeking an undergraduate learning opportunity or laboratory shadowing role to master molecular docking, understanding cellular epigenetics and biochemical signalling pathways in haematological malignancies."
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 border border-slate-200/90 dark:border-slate-800 shadow-sm relative overflow-hidden">
+          <div class="w-1.5 h-full bg-indigo-500 absolute left-0 top-0"></div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono uppercase tracking-wider font-semibold text-indigo-700 dark:text-indigo-400">CV Objective II • Methodology &amp; CLL Focus</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">Core Motivation</span>
+          </div>
+          <p class="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            "Deeply committed to driving oncology forward by computational methodologies and specializing in <strong>dry-lab, and in vitro methodologies</strong>. Driven by a personal focus on blood cancers (specifically <strong>CLL — Chronic Lymphocytic Leukemia</strong>), my academic goal is to design targeted chemical inhibitors digitally and understand their role in biochemical <strong>Cell Signaling (or Signal Transduction)</strong>."
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 Interactive Research Pillar Cards -->
+      <div id="researchGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Pillar 1 -->
+        <div data-category="computational" class="research-card rounded-2xl bg-white dark:bg-slate-900 p-5 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-teal-500/60 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/80 text-rose-500 dark:text-teal-400 flex items-center justify-center mb-4 border border-teal-200/60 dark:border-teal-800">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">Computer-Aided Drug Design (CADD)</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Digitally designing targeted chemical inhibitors and mastering molecular docking workflows to evaluate ligand-target binding affinities.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-rose-600 dark:text-teal-400">
+            <span>Dry-Lab Modeling</span>
+            <span>Molecular Docking</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div data-category="biological" class="research-card rounded-2xl bg-white dark:bg-slate-900 p-5 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-teal-500/60 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-4 border border-rose-200/60 dark:border-rose-800">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">Hematological Malignancies &amp; CLL</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Dedicated personal and scientific focus on blood cancers—specifically Chronic Lymphocytic Leukemia (CLL)—and computational oncology.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-rose-600 dark:text-rose-400">
+            <span>Blood Cancers</span>
+            <span>CLL Focus</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div data-category="biological" class="research-card rounded-2xl bg-white dark:bg-slate-900 p-5 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-teal-500/60 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 border border-indigo-200/60 dark:border-indigo-800">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">Cell Signaling &amp; Epigenetics</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Investigating biochemical cell signaling (signal transduction) pathways and cellular epigenetics in hematological malignancies.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-indigo-600 dark:text-indigo-400">
+            <span>Signal Transduction</span>
+            <span>Epigenetics</span>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div data-category="computational" class="research-card rounded-2xl bg-white dark:bg-slate-900 p-5 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-teal-500/60 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 border border-amber-200/60 dark:border-amber-800">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 3h6M10 3v5.4a2 2 0 0 1-.5 1.3L4 16.2A2 2 0 0 0 5.5 19.5h13a2 2 0 0 0 1.5-3.3l-5.5-6.5a2 2 0 0 1-.5-1.3V3"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">Dry-Lab &amp; In Vitro Integration</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Bridging computational inhibitor design with wet-lab in vitro validation through undergraduate research or laboratory shadowing.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-amber-600 dark:text-amber-400">
+            <span>In Silico + In Vitro</span>
+            <span>Lab Shadowing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & ACADEMIC MILESTONES SECTION -->
+    <section id="education" class="py-14 sm:py-20 bg-white dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-rose-500 dark:text-rose-400 font-semibold">School &amp; College Journey</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-stone-800 dark:text-white mt-1">
+              My Education So Far
+            </h2>
+          </div>
+          <!-- Interactive Filter for Education -->
+          <div class="flex flex-wrap gap-1.5">
+            <button type="button" data-edu-filter="all" class="edu-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-rose-500 text-white shadow-sm transition">All Qualifications (3)</button>
+            <button type="button" data-edu-filter="university" class="edu-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">Undergraduate</button>
+            <button type="button" data-edu-filter="school" class="edu-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">Board Examinations</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Timeline Cards (8 Cols) -->
+          <div id="educationTimeline" class="lg:col-span-8 space-y-5">
+
+            <!-- Presidency University -->
+            <div data-edu-type="university" class="edu-card rounded-2xl bg-slate-50 dark:bg-slate-900 p-6 border border-slate-200/90 dark:border-slate-800 shadow-sm transition hover:border-teal-500/60">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-mono font-semibold bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300">
+                    JULY 2026 – PRESENT
+                  </span>
+                  <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mt-2">
+                    <a href="https://presiuniv.ac.in/" target="_blank" rel="noopener noreferrer" class="hover:text-rose-500 dark:hover:text-teal-400 underline decoration-slate-300 dark:decoration-slate-700">Presidency University, Kolkata</a> — B.Sc. Chemistry (Hons)
+                  </h3>
+                </div>
+                <span class="px-3 py-1 rounded-xl text-xs font-mono font-bold bg-indigo-600 text-white shadow-sm">
+                  GMR – 29 in PUBDET 2026
+                </span>
+              </div>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
+                Undergraduate (1st Year) in the Department of Chemistry, building a rigorous foundation in chemical sciences, molecular structure, and computational applications in oncology.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Chemistry (Hons.)</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Undergraduate (1st Year)</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">PUBDET 2026 General Merit Rank 29</span>
+              </div>
+            </div>
+
+            <!-- DAV Public School AISSCE -->
+            <div data-edu-type="school" class="edu-card rounded-2xl bg-slate-50 dark:bg-slate-900 p-6 border border-slate-200/90 dark:border-slate-800 shadow-sm transition hover:border-teal-500/60">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-mono font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                    MARCH 2024 – MARCH 2026
+                  </span>
+                  <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mt-2">
+                    <a href="https://davhaldia.com/" target="_blank" rel="noopener noreferrer" class="hover:text-rose-500 dark:hover:text-teal-400 underline decoration-slate-300 dark:decoration-slate-700">D. A. V. Public School, Haldia</a> — AISSCE (Class XII)
+                  </h3>
+                </div>
+                <span class="px-3 py-1 rounded-xl text-xs font-mono font-bold bg-rose-500 text-white shadow-sm">
+                  Aggregate – 91%
+                </span>
+              </div>
+              <p class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-3 mb-2">Coursework &amp; Subjects:</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">English</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Physics</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-teal-50 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-800 font-semibold">Chemistry</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Mathematics</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-teal-50 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-800 font-semibold">Biology</span>
+              </div>
+            </div>
+
+            <!-- DAV Public School SSE -->
+            <div data-edu-type="school" class="edu-card rounded-2xl bg-slate-50 dark:bg-slate-900 p-6 border border-slate-200/90 dark:border-slate-800 shadow-sm transition hover:border-teal-500/60">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-mono font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                    MARCH 2021 – MARCH 2024
+                  </span>
+                  <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mt-2">
+                    <a href="https://davhaldia.com/" target="_blank" rel="noopener noreferrer" class="hover:text-rose-500 dark:hover:text-teal-400 underline decoration-slate-300 dark:decoration-slate-700">D. A. V. Public School, Haldia</a> — SSE (Class X)
+                  </h3>
+                </div>
+                <span class="px-3 py-1 rounded-xl text-xs font-mono font-bold bg-emerald-600 text-white shadow-sm">
+                  Aggregate – 93.4%
+                </span>
+              </div>
+              <p class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-3 mb-2">Coursework &amp; Subjects:</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">English</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Bengali</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-teal-50 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-800 font-semibold">Science</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Mathematics (Standard)</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Social Science</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-800 font-semibold">Computer (IT)</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Academic Performance Summary & Quantitative Visual Card (4 Cols) -->
+          <div class="lg:col-span-4 rounded-2xl bg-slate-50 dark:bg-slate-900 p-6 border border-slate-200/90 dark:border-slate-800 shadow-sm space-y-6">
+            <div>
+              <span class="text-xs font-mono uppercase tracking-wider text-rose-500 dark:text-teal-400 font-semibold">Quantitative Summary</span>
+              <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white mt-0.5">Academic Scorecard</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Verified examination performance from CV records.</p>
+            </div>
+
+            <div class="space-y-4">
+              <!-- SSE Metric -->
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-1.5">
+                  <span class="text-slate-700 dark:text-slate-200">SSE (2021–2024) Aggregate</span>
+                  <span class="font-mono text-emerald-600 dark:text-emerald-400">93.4%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                  <div class="h-full rounded-full bg-emerald-500" style="width: 93.4%"></div>
+                </div>
+              </div>
+
+              <!-- AISSCE Metric -->
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-1.5">
+                  <span class="text-slate-700 dark:text-slate-200">AISSCE (2024–2026) Aggregate</span>
+                  <span class="font-mono text-rose-500 dark:text-teal-400">91.0%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                  <div class="h-full rounded-full bg-teal-500" style="width: 91%"></div>
+                </div>
+              </div>
+
+              <!-- PUBDET 2026 Callout -->
+              <div class="p-4 rounded-xl bg-indigo-50/80 dark:bg-indigo-950/50 border border-indigo-200/80 dark:border-indigo-800/80">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono uppercase font-semibold text-indigo-700 dark:text-indigo-300">PUBDET 2026 Rank</span>
+                  <span class="text-lg font-display font-extrabold text-indigo-700 dark:text-indigo-300">GMR 29</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                  Presidency University Bachelor Degree Entrance Test (2026) — admitted to B.Sc. Chemistry (Hons.).
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+              <strong class="text-slate-700 dark:text-slate-200">Core Interdisciplinary Foundation:</strong> Full PCMB (Physics, Chemistry, Mathematics, Biology) in Senior Secondary + Computer (IT) in Secondary school.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS, COMPETENCIES & LANGUAGES SECTION -->
+    <section id="skills" class="py-14 sm:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="mb-10">
+        <span class="text-xs font-mono uppercase tracking-widest text-rose-500 dark:text-rose-400 font-semibold">Foundational Skills &amp; Languages</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-stone-800 dark:text-white mt-1">
+          Basic Skills I Have &amp; Topics I Am Learning
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Computational & Programming Skills -->
+        <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 border border-slate-200/90 dark:border-slate-800 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950 text-rose-500 dark:text-teal-400 flex items-center justify-center border border-teal-200 dark:border-teal-800">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Computational &amp; Programming</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">From CV Skills Section</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+            Proficient in basic computational tasks and foundational programming languages supporting dry-lab problem solving.
+          </p>
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/70">
+              <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Java Programming</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-teal-100 dark:bg-teal-900/60 text-teal-800 dark:text-teal-300">Proficient (Basic)</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/70">
+              <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">QBASIC</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-teal-100 dark:bg-teal-900/60 text-teal-800 dark:text-teal-300">Proficient (Basic)</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/70">
+              <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Computational Tasks &amp; IT</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-teal-100 dark:bg-teal-900/60 text-teal-800 dark:text-teal-300">Proficient</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scientific & Laboratory Focus Areas -->
+        <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 border border-slate-200/90 dark:border-slate-800 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center border border-indigo-200 dark:border-indigo-800">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Research Focus Areas</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Target Lab Competencies</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+            Core scientific methodologies and biological domains targeted for undergraduate research and laboratory shadowing:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">Computer-Aided Drug Design (CADD)</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">Molecular Docking</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">Computational Oncology</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">Targeted Chemical Inhibitors</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">Cellular Epigenetics</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">Cell Signaling / Signal Transduction</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">Dry-Lab &amp; In Vitro Methodologies</span>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 border border-slate-200/90 dark:border-slate-800 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center border border-emerald-200 dark:border-emerald-800">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Languages</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Multilingual Communication</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+            Fluent across three languages for academic collaboration, scientific writing, and team communication:
+          </p>
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/70">
+              <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">English</span>
+              <span class="text-[11px] font-mono text-emerald-700 dark:text-emerald-400">Academic &amp; Professional</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/70">
+              <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Bengali</span>
+              <span class="text-[11px] font-mono text-emerald-700 dark:text-emerald-400">Native / Bilingual</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/70">
+              <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Hindi</span>
+              <span class="text-[11px] font-mono text-emerald-700 dark:text-emerald-400">Proficient</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & LAB SHADOWING INQUIRY SECTION -->
+    <section id="contact" class="py-14 sm:py-20 bg-gradient-to-b from-rose-50/70 to-amber-50/50 dark:from-stone-900/80 dark:to-stone-950 border-t border-rose-100 dark:border-stone-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Contact Details Card (5 Cols) -->
+          <div class="lg:col-span-5 rounded-3xl bg-white dark:bg-slate-900 p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <span class="text-xs font-mono uppercase tracking-widest text-rose-500 dark:text-rose-400 font-semibold">I Would Love to Hear From You</span>
+              <h2 class="font-display text-2xl font-bold text-stone-800 dark:text-white">
+                Say Hello or Share Advice
+              </h2>
+              <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                As a first-year undergraduate just starting out, I am eager to learn from seniors, professors, researchers, and fellow students. Whether you have book recommendations, advice on CADD and molecular docking, or a beginner laboratory shadowing opportunity, please feel warmly welcome to reach out!
+              </p>
+
+              <div class="space-y-3.5 pt-2">
+                <!-- Email -->
+                <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/70">
+                  <div class="w-9 h-9 rounded-xl bg-rose-500 text-white flex items-center justify-center shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Email Address</div>
+                    <a href="mailto:pragyanem@gmail.com" class="text-sm font-mono font-semibold text-rose-600 dark:text-teal-400 hover:underline break-all">pragyanem@gmail.com</a>
+                    <div class="mt-1.5">
+                      <button id="copyEmailBtn" type="button" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-rose-500 dark:hover:text-teal-400 inline-flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        <span>Copy Email</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Residential Address -->
+                <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/70">
+                  <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Residential Address</div>
+                    <div class="text-sm font-medium text-slate-800 dark:text-slate-200 leading-snug mt-0.5">
+                      Banalata Housing, Phase-3, Flat-2/C,<br />
+                      Haldia Township, Haldia<br />
+                      PIN-721607, Midnapore East,<br />
+                      West Bengal, India
+                    </div>
+                    <div class="mt-1.5">
+                      <button id="copyAddressBtn" type="button" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-rose-500 dark:hover:text-teal-400 inline-flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        <span>Copy Address</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-between">
+              <span>University Campus: Kolkata, West Bengal</span>
+              <span>Home: Haldia (721607)</span>
+            </div>
+          </div>
+
+          <!-- Interactive Quick Inquiry Composer (7 Cols) -->
+          <div class="lg:col-span-7 rounded-3xl bg-white dark:bg-slate-900 p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <span class="text-xs font-mono uppercase tracking-widest text-rose-500 dark:text-rose-400 font-semibold">Send a Friendly Note</span>
+            <h3 class="font-display text-xl font-bold text-stone-800 dark:text-white mt-1 mb-2">
+              Write to Me Anytime
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 mb-5">
+              Pick a topic below to pre-fill a quick note or open your email app addressed to <span class="font-mono text-rose-600 dark:text-rose-400">pragyanem@gmail.com</span>.
+            </p>
+
+            <form id="contactForm" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="senderName" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Your Name / Title</label>
+                  <input id="senderName" type="text" placeholder="e.g., Prof. A. Sen / Research Group" class="w-full px-3.5 py-2 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-teal-500" />
+                </div>
+                <div>
+                  <label for="inquiryTopic" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Opportunity / Topic</label>
+                  <select id="inquiryTopic" class="w-full px-3.5 py-2 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-teal-500">
+                    <option value="Laboratory Shadowing Opportunity">Laboratory Shadowing Opportunity</option>
+                    <option value="Undergraduate Research in CADD / Molecular Docking">Undergraduate Research in CADD / Molecular Docking</option>
+                    <option value="Computational Oncology & CLL Research Discussion">Computational Oncology &amp; CLL Research Discussion</option>
+                    <option value="General Academic Connection">General Academic Connection</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="inquiryMessage" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Message Body</label>
+                <textarea id="inquiryMessage" rows="4" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-teal-500">Hello Pragyan, I reviewed your academic portfolio and CV at Presidency University. I would be glad to discuss an undergraduate laboratory shadowing / research learning opportunity in Computer-Aided Drug Design and Computational Oncology.</textarea>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3 pt-1">
+                <button id="sendMailtoBtn" type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-400 text-white font-semibold text-sm shadow-sm transition">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                  <span>Open in Email Client</span>
+                </button>
+                <button id="copyInquiryBtn" type="button" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-sm border border-slate-200 dark:border-slate-700 transition">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <span>Copy Draft Message</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8 px-4 sm:px-6 mt-auto">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+      <div class="flex items-center gap-2.5">
+        <span class="w-6 h-6 rounded-lg bg-rose-500 text-white font-display font-bold flex items-center justify-center text-[11px]">PK</span>
+        <span><strong>Pragyan Kamila</strong> • B.Sc. Chemistry (Hons.), <a href="https://presiuniv.ac.in/" target="_blank" rel="noopener noreferrer" class="underline hover:text-rose-500">Presidency University, Kolkata</a></span>
+      </div>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="mailto:pragyanem@gmail.com" class="hover:text-rose-500 dark:hover:text-teal-400 font-mono">pragyanem@gmail.com</a>
+        <span>•</span>
+        <span>Haldia, West Bengal, India (PIN-721607)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- APPLICATION LOGIC & GROUNDED GOOGLE SITES SNIPPETS                     -->
+  <!-- ===================================================================== -->
+  <script>
+    (function () {
+      // Grounded CV Data for Pragyan Kamila
+      const cvData = {
+        name: 'Pragyan Kamila',
+        title: 'B.Sc. Chemistry (Hons.) Undergraduate | Aspiring Researcher in CADD & Computational Oncology',
+        email: 'pragyanem@gmail.com',
+        address: 'Banalata Housing, Phase-3, Flat-2/C, Haldia Township, Haldia, PIN-721607, Midnapore East, West Bengal, India',
+        objective1: 'Highly motivated B.Sc. Chemistry (Hons.) student at Presidency University aiming to build a research career in Computer-Aided Drug Design (CADD) and Computational Oncology with a special interest in hematological malignancies. Seeking an undergraduate learning opportunity or laboratory shadowing role to master molecular docking, understanding cellular epigenetics and biochemical signalling pathways in haematological malignancies.',
+        objective2: 'Deeply committed to driving oncology forward by computational methodologies and specializing in dry-lab, and in vitro methodologies. Driven by a personal focus on blood cancers (specifically CLL), my academic goal is to design targeted chemical inhibitors digitally and understand their role in biochemical Cell Signaling (or Signal Transduction).'
+      };
+
+      const heroPillars = {
+        docking: {
+          title: 'Molecular Docking & CADD:',
+          desc: 'Digitally designing targeted chemical inhibitors and mastering receptor-ligand docking to disrupt oncogenic drivers.'
+        },
+        cll: {
+          title: 'Hematological Malignancies & CLL:',
+          desc: 'Driven by a personal and scientific focus on blood cancers—specifically Chronic Lymphocytic Leukemia (CLL)—to advance computational oncology.'
+        },
+        signaling: {
+          title: 'Biochemical Cell Signaling & Epigenetics:',
+          desc: 'Investigating signal transduction pathways and cellular epigenetics in hematological malignancies through dry-lab and in vitro methods.'
+        }
+      };
+
+      // Toast helper
+      function showToast(message) {
+        const container = document.getElementById('toastContainer');
+        if (!container) return;
+        const toast = document.createElement('div');
+        toast.className = 'px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-teal-500 text-white dark:text-slate-950 font-semibold text-xs shadow-lg border border-teal-400/30 flex items-center gap-2 transition-all duration-300';
+        toast.innerHTML = '<span>✓</span><span>' + message + '</span>';
+        container.appendChild(toast);
+        setTimeout(function () {
+          toast.style.opacity = '0';
+          setTimeout(function () {
+            if (toast.parentNode) toast.parentNode.removeChild(toast);
+          }, 250);
+        }, 2600);
+      }
+
+      // Clipboard helper with fallback
+      function copyText(text, label) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            showToast(label + ' copied to clipboard!');
+          }).catch(function () {
+            fallbackCopy(text, label);
+          });
+        } else {
+          fallbackCopy(text, label);
+        }
+      }
+
+      function fallbackCopy(text, label) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          showToast(label + ' copied to clipboard!');
+        } catch (err) {
+          showToast('Unable to copy automatically.');
+        }
+        document.body.removeChild(ta);
+      }
+
+      // Navigation smooth scroll buttons
+      const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+      document.getElementById('mobileMenuBtn').addEventListener('click', function () {
+        mobileMenuDrawer.classList.toggle('hidden');
+      });
+
+      document.querySelectorAll('.nav-scroll-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const targetId = btn.getAttribute('data-section');
+          mobileMenuDrawer.classList.add('hidden');
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Brand Link scroll top
+      document.getElementById('brandLink').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Hero Pillar Selector
+      const heroPillarBtns = document.querySelectorAll('.hero-pillar-btn');
+      const heroPillarText = document.getElementById('heroPillarText');
+      heroPillarBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const key = btn.getAttribute('data-hero-pillar');
+          heroPillarBtns.forEach(function (b) {
+            b.className = 'hero-pillar-btn px-2.5 py-1.5 rounded-lg font-medium bg-white/10 text-slate-200 hover:bg-white/20 transition text-center';
+          });
+          btn.className = 'hero-pillar-btn px-2.5 py-1.5 rounded-lg font-medium bg-teal-500 text-slate-950 transition text-center';
+          if (heroPillars[key] && heroPillarText) {
+            heroPillarText.innerHTML = '<strong class="text-teal-300">' + heroPillars[key].title + '</strong> ' + heroPillars[key].desc;
+          }
+        });
+      });
+
+      // Research Pillar Filter
+      const researchFilterBtns = document.querySelectorAll('.research-filter-btn');
+      const researchCards = document.querySelectorAll('.research-card');
+      researchFilterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const filter = btn.getAttribute('data-research-filter');
+          researchFilterBtns.forEach(function (b) {
+            b.className = 'research-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition';
+          });
+          btn.className = 'research-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-rose-500 text-white shadow-sm transition';
+          researchCards.forEach(function (card) {
+            const cat = card.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // Education Timeline Filter
+      const eduFilterBtns = document.querySelectorAll('.edu-filter-btn');
+      const eduCards = document.querySelectorAll('.edu-card');
+      eduFilterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const filter = btn.getAttribute('data-edu-filter');
+          eduFilterBtns.forEach(function (b) {
+            b.className = 'edu-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition';
+          });
+          btn.className = 'edu-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-rose-500 text-white shadow-sm transition';
+          eduCards.forEach(function (card) {
+            const type = card.getAttribute('data-edu-type');
+            if (filter === 'all' || type === filter) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // Copy Email & Address buttons
+      document.getElementById('copyEmailBtn').addEventListener('click', function () {
+        copyText(cvData.email, 'Email address');
+      });
+      document.getElementById('copyAddressBtn').addEventListener('click', function () {
+        copyText(cvData.address, 'Residential address');
+      });
+
+      // Contact Inquiry Form & Topic Template Switcher
+      const inquiryTopic = document.getElementById('inquiryTopic');
+      const inquiryMessage = document.getElementById('inquiryMessage');
+      const senderName = document.getElementById('senderName');
+
+      const topicTemplates = {
+        'Laboratory Shadowing Opportunity': 'Hello Pragyan, I reviewed your academic portfolio and CV at Presidency University. I would be glad to discuss an undergraduate laboratory shadowing / research learning opportunity in Computer-Aided Drug Design and Computational Oncology.',
+        'Undergraduate Research in CADD / Molecular Docking': 'Hello Pragyan, I saw your interest in Computer-Aided Drug Design (CADD), molecular docking, and designing targeted chemical inhibitors digitally. Let us connect regarding an undergraduate project.',
+        'Computational Oncology & CLL Research Discussion': 'Hello Pragyan, your focus on hematological malignancies (specifically Chronic Lymphocytic Leukemia - CLL), cellular epigenetics, and biochemical cell signaling aligns with our work. Let us schedule a time to talk.',
+        'General Academic Connection': 'Hello Pragyan, I came across your Chemistry (Hons.) portfolio at Presidency University and wanted to connect regarding shared academic interests.'
+      };
+
+      inquiryTopic.addEventListener('change', function () {
+        const val = inquiryTopic.value;
+        if (topicTemplates[val]) {
+          inquiryMessage.value = topicTemplates[val];
+        }
+      });
+
+      document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const nameVal = senderName.value.trim() ? ' from ' + senderName.value.trim() : '';
+        const subject = encodeURIComponent(inquiryTopic.value + nameVal);
+        const body = encodeURIComponent(inquiryMessage.value.trim());
+        window.location.href = 'mailto:pragyanem@gmail.com?subject=' + subject + '&body=' + body;
+        showToast('Opening email client for pragyanem@gmail.com');
+      });
+
+      document.getElementById('copyInquiryBtn').addEventListener('click', function () {
+        const fullDraft = 'To: pragyanem@gmail.com\nSubject: ' + inquiryTopic.value + '\n\n' + inquiryMessage.value;
+        copyText(fullDraft, 'Inquiry email draft');
+      });
+
+      // Dark / Light Theme Toggle
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const iconSun = document.getElementById('iconSun');
+      const iconMoon = document.getElementById('iconMoon');
+
+      function updateThemeIcons(isDark) {
+        if (isDark) {
+          iconSun.classList.remove('hidden');
+          iconMoon.classList.add('hidden');
+        } else {
+          iconSun.classList.add('hidden');
+          iconMoon.classList.remove('hidden');
+        }
+      }
+
+      themeToggleBtn.addEventListener('click', function () {
+        const isDark = document.documentElement.classList.toggle('dark');
+        updateThemeIcons(isDark);
+        try {
+          localStorage.setItem('pk_portfolio_theme', isDark ? 'dark' : 'light');
+        } catch (err) {}
+      });
+
+      try {
+        const savedTheme = localStorage.getItem('pk_portfolio_theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+          updateThemeIcons(true);
+        }
+      } catch (err) {}
+    })();
+  </script>
+</body>
+</html>
